@@ -1,0 +1,11 @@
+glimpse_generation(mtcars)
+glimpse_generation(iris)
+
+
+# final_output_name = paste0("glimpse_",Sys.time(),".txt")
+# paste0("glimpse_",Sys.time(),".txt") %>%
+#   gsub(pattern = " ",replacement = "_") %>% 
+#   gsub(pattern = ":",replacement = "_") %>%
+#   gsub(pattern = "-",replacement = "_")  
+s
+
