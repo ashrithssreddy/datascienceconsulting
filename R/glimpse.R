@@ -1,4 +1,4 @@
-#' Glimpse generation
+#' Glimpse generation whatever
 #'
 #' Glimpse Function implementation from tibble.
 #' Typically you'll receive multiple files before collating them into a single ADS
@@ -13,6 +13,7 @@
 #' Ouptut will be a text file written to working directory
 #'
 #' @export
+
 glimpse_generation <- function(dataset, output_name = gsub(x = paste0("glimpse_",Sys.time(),".txt"),pattern = " |:|-",replacement = "_")){
   sink(output_name, type=c("output"))  # Ensures the output is written to 01_glimpse.txt going forward
   dplyr::glimpse(dataset)              # Generates glimpse file
