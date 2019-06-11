@@ -11,6 +11,8 @@ RoxygenNote: 6.1.1
 Imports: 
     data.table,
     dplyr,
-	magrittr,
-	openxlsx,
-    tibble
+    magrittr,
+    openxlsx,
+    tibble,
+    tidyr,
+    beepr
