@@ -18,4 +18,6 @@ glimpse_to_file <- function(dataset, output_name = gsub(x = paste0("glimpse_",Sy
   sink(output_name, type=c("output"))  # Ensures the output is written to 01_glimpse.txt going forward
   dplyr::glimpse(dataset)              # Generates glimpse file
   sink()                               # Ensures the output is written to console going forward
+
+  invisible()
 }

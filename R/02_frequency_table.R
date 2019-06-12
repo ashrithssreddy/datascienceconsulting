@@ -22,4 +22,6 @@ frequency_table = function(dataset, output_filename = "frequency_table.xlsx"){
   openxlsx::saveWorkbook(wb, file = output_filename) # Write and unmount final excel
   rm(dataset,i,one_columns,wb,sheetname)
   invisible(gc())
+
+  invisible()
 }
