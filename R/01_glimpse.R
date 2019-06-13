@@ -1,23 +1,23 @@
-#' Glimpse generation whatever
+#' Generate glimpse of dataset
 #'
-#' Glimpse Function implementation from tibble.
-#' Typically you'll receive multiple files before collating them into a single ADS
-#' This function generates glimpse view of the data.frame passed into it
-#' You are strongly advided to pass output_name to function, else it will create text file with time stamp
+#' Many a times, you will receive multiple datasets to understand and having a glimpse of it stored in test files might come handy while coding.
+#' This function generates glimpse of a data.frame using tibble::glimpse, and write to a text file.
+#' Using same file name for different datasets will append the outputs to a same file.
 #'
-#' @param dataset data.frame passed to tibble's glimpse
-#' @param output_name names of final output file
-#'
-#' @return
-#' No objects are returned
-#' Ouptut will be a text file written to working directory
-#'
+#' @param dataset A data.frame
+#' @param output_filename Name of the output text file (should end in ".txt")
+#' Strongly advised to pass this parameter, else the function's default is glimpse_timestamp.txt
 #' @export
+#' @examples
+#'
+#' glimpse_to_file(mtcars, "glimpse_mtcars.txt")
+#' glimpse_to_file(iris,   "glimpse_iris.txt"  )
 
-glimpse_to_file <- function(dataset, output_name = gsub(x = paste0("glimpse_",Sys.time(),".txt"),pattern = " |:|-",replacement = "_")){
-  sink(output_name, type=c("output"))  # Ensures the output is written to 01_glimpse.txt going forward
-  dplyr::glimpse(dataset)              # Generates glimpse file
-  sink()                               # Ensures the output is written to console going forward
+glimpse_to_file <- function(dataset, output_filename = gsub(x = paste0("glimpse_",Sys.time(),".txt"),pattern = " |:|-",replacement = "_")){
+  sink(output_filename, type=c("output"),append = T)  # Ensures the glimpse output is written to output_filename text file
+  tibble::glimpse(dataset)                            # Generates and writes the output of tibble::glimpse() to output_filename text file
+  cat("\n");cat("\n")                                 # 2 blank lines at the end of output
+  sink()                                              # Unmounts output_filename text file
 
-  invisible()
+  invisible()                                         # To return nothing
 }

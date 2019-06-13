@@ -2,23 +2,24 @@
 % Please edit documentation in R/01_glimpse.R
 \name{glimpse_to_file}
 \alias{glimpse_to_file}
-\title{Glimpse generation whatever}
+\title{Generate glimpse of dataset}
 \usage{
-glimpse_to_file(dataset, output_name = gsub(x = paste0("glimpse_",
+glimpse_to_file(dataset, output_filename = gsub(x = paste0("glimpse_",
   Sys.time(), ".txt"), pattern = " |:|-", replacement = "_"))
 }
 \arguments{
-\item{dataset}{data.frame passed to tibble's glimpse}
+\item{dataset}{A data.frame}
 
-\item{output_name}{names of final output file}
-}
-\value{
-No objects are returned
-Ouptut will be a text file written to working directory
+\item{output_filename}{Name of the output text file (should end in ".txt")
+Strongly advised to pass this parameter, else the function's default is glimpse_timestamp.txt}
 }
 \description{
-Glimpse Function implementation from tibble.
-Typically you'll receive multiple files before collating them into a single ADS
-This function generates glimpse view of the data.frame passed into it
-You are strongly advided to pass output_name to function, else it will create text file with time stamp
+Many a times, you will receive multiple datasets to understand and having a glimpse of it stored in test files might come handy while coding.
+This function generates glimpse of a data.frame using tibble::glimpse, and write to a text file.
+Using same file name for different datasets will append the outputs to a same file.
+}
+\examples{
+
+glimpse_to_file(mtcars, "glimpse_mtcars.txt")
+glimpse_to_file(iris,   "glimpse_iris.txt"  )
 }
