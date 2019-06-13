@@ -11,7 +11,7 @@ glimpse_to_file(dataset, output_filename = gsub(x = paste0("glimpse_",
 \item{dataset}{A data.frame}
 
 \item{output_filename}{Name of the output text file (should end in ".txt")
-Strongly advised to pass this parameter, else the function's default is glimpse_timestamp.txt}
+Strongly advised to pass this parameter, else the function's default is "glimpse_timestamp.txt"}
 }
 \description{
 Many a times, you will receive multiple datasets to understand and having a glimpse of it stored in test files might come handy while coding.

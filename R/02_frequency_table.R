@@ -1,3 +1,30 @@
+#' Generate frequency of each entry in each column of dataframe
+#'
+#' Real-life data is rarely perfect and fields in a data.frame contains entries not anticipated.
+#' It helps to know your data (along with functions you use) before performing any manipulations on it.
+#' This function generates frequency table excel, each column of input dataframe in a separate sheet in output excel.
+#'
+#' @param dataset A data.frame
+#' @param output_filename Name of the output text file (should end in ".xlsx")
+#' Strongly advised to pass this parameter, else the function's default is "frequency_table.xlsx"
+#' @param columns_to_exclude List of columns in input dataset for which frequencies need not be generated
+#' Pass a vector of columns for this parameter.
+#' For e.g. c("hp","mpg","carb")
+#' @param maximum_entries Maximum unique entries in output.
+#' For e.g. setting this parameter to 10000 will return only top 10000 occurring entries in each column
+#' @param format_width Boolean input indicating if output excel cells' column width need to be formatted to "auto"
+#' @param Sl_No_required Boolean input indicating if Sl_No column needs to be present in output excel
+#' @param Frequency_required Boolean input indicating if Frequency column needs to be present in output excel
+#' @param Percentage_required Boolean input indicating if Percentage column needs to be present in output excel
+#' @param Cumulative_Percentage_required Boolean input indicating if Cumulative_Percentage column needs to be present in output excel
+#' @param String_Length_required Boolean input indicating if String_Length column needs to be present in output excel
+#' @param Sl_No_to_last Boolean input indicating if Sl_No column should be the last column in output excel
+#' @export
+#' @examples
+#'
+#' frequency_table(iris,   "frequency_table_iris.xlsx"  )
+#' frequency_table(mtcars, "frequency_table_mtcars.xlsx", columns_to_exclude = c("hp","mpg","carb"), maximum_entries = 10, format_width = F, Cumulative_Percentage_required = T, Sl_No_to_last = T)
+
 frequency_table = function(dataset, output_filename = "frequency_table.xlsx", columns_to_exclude = c(), maximum_entries = 2^20, format_width = T, Sl_No_required = T, Frequency_required = T, Percentage_required = T, Cumulative_Percentage_required = F, String_Length_required = T, Sl_No_to_last = F){
 
   dataset = dataset[, !colnames(dataset) %in% columns_to_exclude] # Exclude columns of no interest
@@ -60,6 +87,7 @@ frequency_table = function(dataset, output_filename = "frequency_table.xlsx", co
   invisible()                                                          # To return nothing
 }
 
+#### JUNK CODE BELOW - IGNORE ####
 if(F){
   # library("data.table")
   # cat("\014")

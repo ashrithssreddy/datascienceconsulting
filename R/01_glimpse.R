@@ -6,7 +6,7 @@
 #'
 #' @param dataset A data.frame
 #' @param output_filename Name of the output text file (should end in ".txt")
-#' Strongly advised to pass this parameter, else the function's default is glimpse_timestamp.txt
+#' Strongly advised to pass this parameter, else the function's default is "glimpse_timestamp.txt"
 #' @export
 #' @examples
 #'
