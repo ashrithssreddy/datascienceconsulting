@@ -1,12 +1,12 @@
 Package: datascienceconsulting
 Title: Useful Handy Functions for Folks in Data Science Consulting
-Version: 0.1.0
+Version: 0.1.1
 Authors@R: person("Ashrith", "Reddy", email = "ashrithssreddy@gmail.com", role = c("aut", "cre"))
 Description: Real life data is muddy, fuzzy and unpredictable. This makes data manipulations unnecessarily tedious and just bringing the data to right shape is a major chunk of work. Functions in this package help us get an understanding of datasets to dramatically reduces this time.
 Depends: R (>= 3.3.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 Imports:
     tibble

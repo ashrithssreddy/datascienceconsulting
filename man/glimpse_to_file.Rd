@@ -4,8 +4,11 @@
 \alias{glimpse_to_file}
 \title{Generate glimpse of dataset}
 \usage{
-glimpse_to_file(dataset, output_filename = gsub(x = paste0("glimpse_",
-  Sys.time(), ".txt"), pattern = " |:|-", replacement = "_"))
+glimpse_to_file(
+  dataset,
+  output_filename = gsub(x = paste0("glimpse_", Sys.time(), ".txt"), pattern = " |:|-",
+    replacement = "_")
+)
 }
 \arguments{
 \item{dataset}{A data.frame}
